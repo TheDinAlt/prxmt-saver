@@ -14,13 +14,7 @@ def keyboard(data: list, adj=None):
         return kb.as_markup()
 
 
-start = keyboard([
-     #["Рефералка", "repheral"],
-     #["Ввести промокод", "promo"]
-])
-
 choose_type = keyboard([
      ["Загрузить видео (.mp4)", "download_video"],
      ["Загрузить аудио (.mp3)", "download_audio"]
-     #["Назад", "start"]
 ])
