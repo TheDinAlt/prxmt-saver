@@ -30,9 +30,6 @@ async def start():
 @dp.message(Command('start'))
 async def start_cmd(msg: types.Message, state: FSMContext):
     await state.clear()
-    user_channel_status = await bot.get_chat_member(chat_id=config("blog_id"), user_id=msg.from_user.id)
-    if user_channel_status.status == 'left':
-        await bot.send_message(chat_id=msg.from_user.id, text=texts.unsubscribed)
     await state.set_state(MainFSM().get_url)
     await msg.answer(text=texts.start, reply_markup=kb.start)
 
